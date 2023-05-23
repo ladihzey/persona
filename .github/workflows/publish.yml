@@ -21,7 +21,7 @@ jobs:
           cargo install trunk
 
       - name: Build project 🔧
-        run: trunk build
+        run: trunk build --release
 
       - name: Deploy to GitHub pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4
