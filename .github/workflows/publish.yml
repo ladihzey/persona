@@ -23,9 +23,11 @@ jobs:
 
       - uses: jetli/trunk-action@v0.4.0
       - uses: jetli/wasm-bindgen-action@v0.2.0
+      - run: sudo apt -y install binaryen
 
       - run: sed -i "s|main.css|"${{ github.event.repository.name }}"\/main.css|" index.html
       - run: trunk build --release --public-url /${{ github.event.repository.name }}/
+      - run: wasm-opt -Oz -o dist/*.wasm dist/*.wasm
 
       - uses: peaceiris/actions-gh-pages@v3
         with:
