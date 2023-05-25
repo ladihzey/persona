@@ -15,21 +15,36 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: actions-rs/toolchain@v1
+      - name: Install rust toolchain
+        uses: actions-rs/toolchain@v1
         with:
           toolchain: nightly
           default: true
           target: wasm32-unknown-unknown
 
-      - uses: jetli/trunk-action@v0.4.0
-      - uses: jetli/wasm-bindgen-action@v0.2.0
-      - run: sudo apt -y install binaryen
+      - name: Install trunk bundler
+        uses: jetli/trunk-action@v0.4.0
 
-      - run: sed -i "s|main.css|"${{ github.event.repository.name }}"\/main.css|" index.html
-      - run: trunk build --release --public-url /${{ github.event.repository.name }}/
-      - run: wasm-opt -Oz -o dist/*.wasm dist/*.wasm
+      - name: Install WASM
+        uses: jetli/wasm-bindgen-action@v0.2.0
 
-      - uses: peaceiris/actions-gh-pages@v3
+      - name: Install build optimization tools
+        run: sudo apt -y install binaryen minify
+
+      - name: Build
+        run: |
+          sed -i "s|main.css|"${{ github.event.repository.name }}"\/main.css|" index.html
+          trunk build --release --public-url /${{ github.event.repository.name }}/
+
+      - name: Optimize bundle size
+        run: |
+          wasm-opt -Oz -o dist/*.wasm dist/*.wasm
+          minify -o dist/*.css dist/*.css
+          minify -o dist/*.js dist/*.js
+          minify -o dist/*.html dist/*.html
+
+      - name: Publish page
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
