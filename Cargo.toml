@@ -12,4 +12,3 @@ codegen-units = 1
 
 [dependencies]
 leptos = "0.3.0"
-stylers = "0.3.1"
