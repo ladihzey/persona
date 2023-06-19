@@ -1,12 +1,28 @@
 use leptos::*;
+use stylers::{style};
 
 #[component]
 pub fn IntroSection(cx: Scope) -> impl IntoView {
-    view! { cx,
-        <main class="min-h-screen w-screen bg-gray-800 flex items-center justify-center">
-            <h1 class="text-stone-200 text-5xl">
-                "Hi, I'm Yegor Zhidal"
-            </h1>
+    let styles = style! { "IntroSection",
+        .intro-section {
+            display: block flex;
+            align-items: center;
+            justify-content: center;
+            width: 100lvw;
+            height: 100lvh;
+            background-color: dimgray;
+        }
+
+        h1 {
+            text-transform: uppercase;
+            font-family: mono;
+            color: ivory;
+        }
+    };
+
+    view! { cx, class = styles,
+        <main class="intro-section">
+            <h1>"Hi, I'm Yegor Zhidal"</h1>
         </main>
     }
 }

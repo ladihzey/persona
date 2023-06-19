@@ -15,11 +15,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install NodeJS toolchain
-        uses: actions/setup-node@v3
-        with:
-          node-version: 19.8
-
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@nightly
         with:
@@ -32,7 +27,9 @@ jobs:
         run: sudo apt -y install binaryen minify
 
       - name: Build
-        run: trunk build --release --public-url /${{ github.event.repository.name }}/
+        run: |
+          sed -i "s|main.css|"${{ github.event.repository.name }}"\/main.css|" index.html
+          trunk build --release --public-url /${{ github.event.repository.name }}/
 
       - name: Optimize bundle size
         run: |
