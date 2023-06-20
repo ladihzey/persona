@@ -2,13 +2,36 @@ main {
   display: block flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 100lvh;
   width: 100lvw;
-  background-color: var(--color-background);
+  background-image: url('./assets/main.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+span {
+  font-family: monospace;
+  font-style: italic;
+  font-size: 20px;
+  color: var(--color-foreground);
 }
 
 h1 {
+  display: block flex;
+  align-items: center;
+  gap: 30px;
+  margin: 0;
   text-transform: uppercase;
-  font-family: monospace;
+  font-family: 'Unica One';
+  font-size: 60px;
   color: var(--color-foreground);
+}
+
+h1::before, h1::after {
+  display: block flow;
+  content: '';
+  height: 2px;
+  width: 60px;
+  background-color: var(--color-foreground);
 }
