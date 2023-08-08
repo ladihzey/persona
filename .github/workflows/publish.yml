@@ -15,18 +15,16 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install NodeJS toolchain
-        uses: actions/setup-node@v3
-        with:
-          node-version: 19.8
-
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@stable
         with:
           targets: wasm32-unknown-unknown
+          version: '1.71'
 
       - name: Install trunk bundler
         uses: jetli/trunk-action@v0.4.0
+        with:
+          version: 'v0.17.3'
 
       - name: Build
         run: trunk build --release --public-url /${{ github.event.repository.name }}/
