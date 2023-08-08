@@ -21,18 +21,18 @@ jobs:
           node-version: 19.8
 
       - name: Install Rust toolchain
-        uses: dtolnay/rust-toolchain@nightly
+        uses: dtolnay/rust-toolchain@stable
         with:
           targets: wasm32-unknown-unknown
 
       - name: Install trunk bundler
         uses: jetli/trunk-action@v0.4.0
 
-      - name: Install build optimization tools
-        run: sudo apt -y install binaryen minify
-
       - name: Build
         run: trunk build --release --public-url /${{ github.event.repository.name }}/
+
+      - name: Install build optimization tools
+        run: sudo apt -y install binaryen minify
 
       - name: Optimize bundle size
         run: |
