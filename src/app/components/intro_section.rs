@@ -1,12 +1,5 @@
-use wasm_bindgen::prelude::*;
 use leptos::*;
-
-// lifted from the `console_log` example
-#[wasm_bindgen]
-extern "C" {
-    #[wasm_bindgen(js_namespace = window)]
-    fn print();
-}
+use crate::browser;
 
 #[component]
 pub fn IntroSection(cx: Scope) -> impl IntoView {
@@ -31,9 +24,11 @@ pub fn IntroSection(cx: Scope) -> impl IntoView {
                 </h1>
             </section>
             <button
-                on:click=move |_| print()
                 class="text-stone-300 uppercase bg-gray-700 p-4 rounded-md"
-            >"Print CV"</button>
+                on:click=move |_| browser::print()
+            >
+                "Print CV"
+            </button>
         </main>
     }
 }
