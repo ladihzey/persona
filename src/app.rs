@@ -1,6 +1,6 @@
-use leptos::*;
 use crate::browser;
-use crate::components::{Button, Printer, Variant};
+use crate::components::{Button, IcoPrinter, IcoVariant, Avatar};
+use leptos::*;
 
 #[component]
 pub fn App(cx: Scope) -> impl IntoView {
@@ -9,24 +9,24 @@ pub fn App(cx: Scope) -> impl IntoView {
             <div class="max-w-screen-lg min-h-screen mx-auto flex items-center justify-center">
                 <main class="flex flex-col items-center justify-center gap-10">
                     <section class="flex items-center justify-center gap-10">
-                        <div class="relative w-48 h-48 overflow-hidden rounded-full">
-                            <img
-                                class="absolute inset-0 w-full h-full object-cover"
+                        <div class="w-48 h-48">
+                            <Avatar
                                 src="assets/profile-photo.webp"
                                 alt="Profile photo"
                             />
                         </div>
-                        <h1 class="text-stone-100 text-4xl">
+                        <h1 class="text-stone-100 text-4xl font-sans">
                             "Hi, I'm "
                             <a
                                 class="underline hover:text-stone-300 active:text-stone-400"
-                                href="https://translate.google.com/?sl=en&tl=ru&text=Yegor%20Zhidal&op=translate">
+                                href="https://translate.google.com/?sl=en&tl=ru&text=Yegor%20Zhidal&op=translate"
+                            >
                                 "Yegor Zhidal"
                             </a>
                         </h1>
                     </section>
                     <Button on:click=move |_| browser::print()>
-                        <Printer variant=Variant::Solid/>
+                        <IcoPrinter variant=IcoVariant::Solid/>
                         "Print Profile"
                     </Button>
                 </main>
