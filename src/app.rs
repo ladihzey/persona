@@ -77,7 +77,9 @@ fn CareerSection(cx: Scope) -> impl IntoView {
         <section class="w-full flex flex-col gap-8">
             <h2>"My Journey"</h2>
             <article class="flex gap-5">
-                <img class="w-32" src="assets/vention.webp" alt="IT company logotype, abstract lines forming V-shape" />
+                <div class="w-32 h-32 flex-shrink-0">
+                    <img src="assets/vention.webp" alt="IT company logotype, abstract lines forming V-shape" />
+                </div>
                 <div class="flex flex-col">
                     <h3>"Vention"</h3>
                     <div class="flex items-center gap-2">
@@ -98,7 +100,9 @@ fn CareerSection(cx: Scope) -> impl IntoView {
             </article>
 
             <article class="flex gap-5">
-                <img class="w-32" src="assets/bsuir.webp" alt="university logotype, radio-waves" />
+                <div class="w-32 h-32 flex-shrink-0">
+                    <img src="assets/bsuir.webp" alt="university logotype, radio-waves" />
+                </div>
                 <div class="flex flex-col">
                     <h3>"BSUIR"</h3>
                     <p class="italic text-teal-500">"2017 — 2022"</p>
@@ -132,13 +136,28 @@ fn Footer(cx: Scope) -> impl IntoView {
             <div class="max-w-screen-lg mx-auto px-10 py-8 flex items-center">
                 <ul class="flex gap-10">
                     <li>
-                        <a href="https://github.com/ladihzey">GitHub</a>
+                        <a class="flex items-center gap-2" href="https://github.com/ladihzey">
+                            <div class="w-5 h-5">
+                                <img src="assets/github.png" alt="github space-cat logo" />
+                            </div>
+                            "GitHub"
+                        </a>
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com/in/yegor-zhidal-10530a1a7">LinkedIn</a>
+                        <a class="flex items-center gap-2" href="https://www.linkedin.com/in/yegor-zhidal-10530a1a7">
+                            <div class="w-5 h-5">
+                                <img src="assets/linkedin.png" alt="blue linkedin logo" />
+                            </div>
+                            "LinkedIn"
+                        </a>
                     </li>
                     <li>
-                        <a href="mailto: ladihzey@proton.me">Email</a>
+                        <a class="flex items-center gap-2" href="mailto: ladihzey@proton.me">
+                            <div class="w-5 h-5">
+                                <img src="assets/protonmail.png" alt="protonmail logo" />
+                            </div>
+                            "Email"
+                        </a>
                     </li>
                 </ul>
             </div>
