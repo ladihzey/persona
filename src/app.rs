@@ -58,7 +58,7 @@ fn PersonalitySection(cx: Scope) -> impl IntoView {
                     r#"
                         As a passionate learner, I continuously broaden my expertise and explore new domains
                         e.g. this very web page you are currently reading is written in Rust.
-                        A few years ago, I couldn't even have imagined that it would be possible!
+                        A few years ago I couldn't even have imagined that it would be possible!
                     "#
                 </p>
                 <p>
