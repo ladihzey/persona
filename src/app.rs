@@ -121,8 +121,8 @@ fn DownloadPortfolioSection(cx: Scope) -> impl IntoView {
 #[component]
 fn Footer(cx: Scope) -> impl IntoView {
     view! { cx,
-        <footer class="w-full mx-auto bg-neutral-900 h-16 border-t-2 border-teal-700">
-            <div class="max-w-screen-lg h-full mx-auto flex items-center">
+        <footer class="w-full mx-auto bg-neutral-900 border-t-2 border-teal-700">
+            <div class="max-w-screen-lg mx-auto px-10 py-8 flex items-center">
                 <ul class="flex gap-10">
                     <li>
                         <a href="https://github.com/ladihzey">GitHub</a>
