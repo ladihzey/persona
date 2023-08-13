@@ -9,7 +9,7 @@ pub fn App(cx: Scope) -> impl IntoView {
             <main class="max-w-screen-lg w-full p-10 mx-auto flex flex-col items-center gap-10">
                 <IntroSection />
                 <PersonalitySection />
-                <JourneySection />
+                <CareerSection />
                 <DownloadPortfolioSection />
             </main>
             <Footer />
@@ -43,7 +43,7 @@ fn IntroSection(cx: Scope) -> impl IntoView {
 #[component]
 fn PersonalitySection(cx: Scope) -> impl IntoView {
     view! { cx,
-        <section class="w-full self-start flex flex-col gap-5">
+        <section class="w-full flex flex-col gap-5">
             <h2>"Who am I?"</h2>
             <article class="flex flex-col gap-3">
                 <p>
@@ -72,30 +72,39 @@ fn PersonalitySection(cx: Scope) -> impl IntoView {
 }
 
 #[component]
-fn JourneySection(cx: Scope) -> impl IntoView {
+fn CareerSection(cx: Scope) -> impl IntoView {
     view! { cx,
-        <section class="w-full self-start flex flex-col gap-5">
-            <h2>"My Career"</h2>
+        <section class="w-full flex flex-col gap-8">
+            <h2>"My Journey"</h2>
             <article class="flex gap-5">
-                <img
-                    class="w-36 h-36"
-                    src="assets/vention.webp"
-                    alt="IT company logotype, abstract lines forming V-shape"
-                />
-                <div class="flex flex-col gap-3">
+                <img class="w-32" src="assets/vention.webp" alt="IT company logotype, abstract lines forming V-shape" />
+                <div class="flex flex-col">
                     <h3>"Vention"</h3>
                     <div class="flex items-center gap-2">
-                        <p class="italic text-lg text-teal-500">"November 2019 — NOW"</p>
+                        <p class="italic text-teal-500">"November 2019 — NOW"</p>
                         <span class="relative flex h-3 w-3">
                             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
                             <span class="relative inline-flex rounded-full h-3 w-3 bg-teal-500"></span>
                         </span>
                     </div>
-                    <p>
+                    <p class="pt-3">
                         r#"
                             Vention is an outsourcing company which played a pivotal role in shaping my career trajectory.
                             Thanks to it, I had the opportunity to mature as a web-engineer through work in multiple projects,
                             each contributing significantly to my professional growth and enriching my skill set.
+                        "#
+                    </p>
+                </div>
+            </article>
+
+            <article class="flex gap-5">
+                <img class="w-32" src="assets/bsuir.webp" alt="university logotype, radio-waves" />
+                <div class="flex flex-col">
+                    <h3>"BSUIR"</h3>
+                    <p class="italic text-teal-500">"2017 — 2022"</p>
+                    <p class="pt-3">
+                        r#"
+                            Belarusian State University of Informatics and Radioelectronics
                         "#
                     </p>
                 </div>
