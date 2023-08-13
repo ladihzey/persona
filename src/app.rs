@@ -5,12 +5,11 @@ use leptos::*;
 #[component]
 pub fn App(cx: Scope) -> impl IntoView {
     view! { cx,
-        <div class="bg-pattern min-h-screen w-screen">
+        <div class="bg-pattern-topography bg-neutral-900 min-h-screen w-screen">
             <main class="max-w-screen-lg w-full p-10 mx-auto flex flex-col items-center gap-10">
                 <IntroSection />
                 <PersonalitySection />
-                <CareerSection />
-                <EducationSection />
+                <JourneySection />
                 <DownloadPortfolioSection />
             </main>
             <Footer />
@@ -25,7 +24,7 @@ fn IntroSection(cx: Scope) -> impl IntoView {
             <div class="w-48 h-48">
                 <Avatar
                     src="assets/profile-photo.webp"
-                    alt="Profile photo"
+                    alt="profile photo"
                 />
             </div>
             <h1>
@@ -73,34 +72,33 @@ fn PersonalitySection(cx: Scope) -> impl IntoView {
 }
 
 #[component]
-fn CareerSection(cx: Scope) -> impl IntoView {
+fn JourneySection(cx: Scope) -> impl IntoView {
     view! { cx,
         <section class="w-full self-start flex flex-col gap-5">
             <h2>"My Career"</h2>
-            <article class="flex flex-col gap-3">
-                <h3>"Vention"</h3>
-                <p>
-                    r#"
-                        Vention is an outsourcing company which played a pivotal role in shaping my career trajectory.
-                        Thanks to it, I had the opportunity to mature as a web-engineer through work in multiple projects,
-                        each contributing significantly to my professional growth and enriching my skill set.
-                    "#
-                </p>
-            </article>
-        </section>
-    }
-}
-
-#[component]
-fn EducationSection(cx: Scope) -> impl IntoView {
-    view! { cx,
-        <section class="w-full self-start flex flex-col gap-5">
-            <h2>"Education"</h2>
-            <article>
-                <h3>"Vention Internship"</h3>
-            </article>
-            <article>
-                <h3>"BSUIR"</h3>
+            <article class="flex gap-5">
+                <img
+                    class="w-36 h-36"
+                    src="assets/vention.webp"
+                    alt="IT company logotype, abstract lines forming V-shape"
+                />
+                <div class="flex flex-col gap-3">
+                    <h3>"Vention"</h3>
+                    <div class="flex items-center gap-2">
+                        <p class="italic text-lg text-teal-500">"November 2019 — NOW"</p>
+                        <span class="relative flex h-3 w-3">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-teal-500"></span>
+                        </span>
+                    </div>
+                    <p>
+                        r#"
+                            Vention is an outsourcing company which played a pivotal role in shaping my career trajectory.
+                            Thanks to it, I had the opportunity to mature as a web-engineer through work in multiple projects,
+                            each contributing significantly to my professional growth and enriching my skill set.
+                        "#
+                    </p>
+                </div>
             </article>
         </section>
     }
@@ -109,8 +107,8 @@ fn EducationSection(cx: Scope) -> impl IntoView {
 #[component]
 fn DownloadPortfolioSection(cx: Scope) -> impl IntoView {
     view! { cx,
-        <section class="py-10">
-            <Button on:click=move |_| browser::print()>
+        <section class="py-10 no-print">
+            <Button on:click=move |_| browser::window::print()>
                 <IcoPrinter variant=IconVariant::Solid/>
                 "Print Portfolio"
             </Button>
