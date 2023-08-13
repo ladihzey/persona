@@ -107,8 +107,16 @@ fn CareerSection(cx: Scope) -> impl IntoView {
                     <h3>"BSUIR"</h3>
                     <p class="italic text-teal-500">"2017 — 2022"</p>
                     <p class="pt-3">
+                        "Belarusian State University of Informatics and Radioelectronics"
+                        <br />
+                        "Faculty of Computer Systems and Networks"
+                    </p>
+                    <p class="pt-3">
                         r#"
-                            Belarusian State University of Informatics and Radioelectronics
+                            While I didn't complete my diploma work and attain a bachelor's degree,
+                            I did complete all the required courses. This educational journey
+                            has provided me with valuable foundational knowledge that I've applied
+                            and built upon throughout my experiences.
                         "#
                     </p>
                 </div>
