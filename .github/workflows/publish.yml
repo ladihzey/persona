@@ -1,3 +1,6 @@
+# Useful resources:
+#   * Cache the work of the cargo workflow - https://ectobit.com/blog/speed-up-github-actions-rust-pipelines/
+
 name: publish
 
 permissions:
@@ -19,12 +22,24 @@ jobs:
         uses: dtolnay/rust-toolchain@stable
         with:
           targets: wasm32-unknown-unknown
-          version: '1.71'
 
       - name: Install trunk bundler
         uses: jetli/trunk-action@v0.4.0
         with:
-          version: 'v0.17.3'
+          version: v0.17.3
+
+      - name: Set up cargo cache
+        uses: actions/cache@v3
+        continue-on-error: false
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: ${{ runner.os }}-cargo-
 
       - name: Build
         run: trunk build --release --public-url /${{ github.event.repository.name }}/
