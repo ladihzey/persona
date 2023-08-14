@@ -1,5 +1,5 @@
 use crate::browser;
-use crate::components::{Avatar, Button, IcoPrinter, IconVariant};
+use crate::components::{Avatar, Button, Badge, BadgeVariant, IcoPrinter, IconVariant};
 use leptos::*;
 
 #[component]
@@ -48,7 +48,7 @@ fn PersonalitySection(cx: Scope) -> impl IntoView {
             <article class="flex flex-col gap-3">
                 <p>
                     r#"
-                        I'm a web-engineer who is deeply fascinated by the boundless possibilities
+                        I'm a software engineer who is deeply fascinated by the boundless possibilities
                         of the web-platform. My journey reflects adaptability, embracing diverse challenges
                         and creating seamless web-experiences.
                     "#
@@ -92,8 +92,9 @@ fn CareerSection(cx: Scope) -> impl IntoView {
                     <p class="pt-3">
                         r#"
                             Vention is an outsourcing company which played a pivotal role in shaping my career trajectory.
-                            Thanks to it, I had the opportunity to mature as a web-engineer through work in multiple projects,
-                            each contributing significantly to my professional growth and enriching my skill set.
+                            Thanks to it, I had the opportunity to mature as a software engineer through work
+                            in multiple projects, each contributing significantly to my professional growth and
+                            enriching my skill set.
                         "#
                     </p>
                 </div>
