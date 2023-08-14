@@ -1,6 +1,7 @@
 use leptos::*;
 use IconVariant::*;
 
+#[allow(dead_code)]
 pub enum IconVariant {
     Outline,
     Solid,

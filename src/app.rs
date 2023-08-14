@@ -77,7 +77,7 @@ fn CareerSection(cx: Scope) -> impl IntoView {
         <section class="w-full flex flex-col gap-8">
             <h2>"My Journey"</h2>
             <article class="flex gap-5">
-                <div class="w-32 h-32 flex-shrink-0">
+                <div class="w-32 h-32 flex-shrink-0 sticky top-5">
                     <img src="assets/vention.webp" alt="IT company logotype, abstract lines forming V-shape" />
                 </div>
                 <div class="flex flex-col gap-6">
@@ -207,7 +207,7 @@ fn CareerSection(cx: Scope) -> impl IntoView {
             </article>
 
             <article class="flex gap-5">
-                <div class="w-32 h-32 flex-shrink-0">
+                <div class="w-32 h-32 flex-shrink-0 sticky top-5">
                     <img src="assets/bsuir.webp" alt="university logotype, radio-waves" />
                 </div>
                 <div class="flex flex-col">

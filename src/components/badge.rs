@@ -1,6 +1,8 @@
 use leptos::*;
 use BadgeVariant::*;
 
+
+#[allow(dead_code)]
 pub enum BadgeVariant {
     Gray,
     Red,
