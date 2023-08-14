@@ -286,7 +286,7 @@ fn CareerSection(cx: Scope) -> impl IntoView {
 #[component]
 fn DownloadProfileSection(cx: Scope) -> impl IntoView {
     view! { cx,
-        <section class="py-10 no-print">
+        <section class="py-10 print:hidden">
             <Button on:click=move |_| browser::window::print()>
                 <IcoPrinter variant=IconVariant::Solid/>
                 "Print Profile"
@@ -300,30 +300,33 @@ fn Footer(cx: Scope) -> impl IntoView {
     view! { cx,
         <footer class="w-full mx-auto bg-neutral-900 border-t-2 border-teal-700">
             <div class="max-w-screen-lg mx-auto px-10 py-8 flex items-center">
-                <ul class="flex gap-10">
+                <ul class="flex gap-10 print:flex-col print:gap-3">
                     <li>
-                        <a class="flex items-center gap-2" href="https://github.com/ladihzey">
+                        <a class="flex items-center gap-2 print:hidden" href="https://github.com/ladihzey">
                             <div class="w-5 h-5">
                                 <img src="assets/github.png" alt="github space-cat logo" />
                             </div>
                             "GitHub"
                         </a>
+                        <p class="hidden print:inline-block">"GitHub: https://github.com/ladihzey"</p>
                     </li>
                     <li>
-                        <a class="flex items-center gap-2" href="https://www.linkedin.com/in/yegor-zhidal-10530a1a7">
+                        <a class="flex items-center gap-2 print:hidden" href="https://www.linkedin.com/in/yegor-zhidal-10530a1a7">
                             <div class="w-5 h-5">
                                 <img src="assets/linkedin.png" alt="blue linkedin logo" />
                             </div>
                             "LinkedIn"
                         </a>
+                        <p class="hidden print:inline-block">"LinkedIn: https://www.linkedin.com/in/yegor-zhidal-10530a1a7"</p>
                     </li>
                     <li>
-                        <a class="flex items-center gap-2" href="mailto: ladihzey@proton.me">
+                        <a class="flex items-center gap-2 print:hidden" href="mailto: ladihzey@proton.me">
                             <div class="w-5 h-5">
                                 <img src="assets/protonmail.png" alt="protonmail logo" />
                             </div>
                             "Email"
                         </a>
+                        <p class="hidden print:inline-block">"Email: ladihzey@proton.me"</p>
                     </li>
                 </ul>
             </div>
