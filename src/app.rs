@@ -80,23 +80,129 @@ fn CareerSection(cx: Scope) -> impl IntoView {
                 <div class="w-32 h-32 flex-shrink-0">
                     <img src="assets/vention.webp" alt="IT company logotype, abstract lines forming V-shape" />
                 </div>
-                <div class="flex flex-col">
-                    <h3>"Vention"</h3>
-                    <div class="flex items-center gap-2">
-                        <p class="italic text-teal-500">"November 2019 — NOW"</p>
-                        <span class="relative flex h-3 w-3">
-                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-3 w-3 bg-teal-500"></span>
-                        </span>
-                    </div>
-                    <p class="pt-3">
-                        r#"
-                            Vention is an outsourcing company which played a pivotal role in shaping my career trajectory.
-                            Thanks to it, I had the opportunity to mature as a software engineer through work
-                            in multiple projects, each contributing significantly to my professional growth and
-                            enriching my skill set.
-                        "#
-                    </p>
+                <div class="flex flex-col gap-6">
+                    <section>
+                        <h3>"Vention"</h3>
+                        <div class="flex items-center gap-2">
+                            <p class="italic text-teal-500">"August 2019 — NOW"</p>
+                            <span class="relative flex h-3 w-3">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-3 w-3 bg-teal-500"></span>
+                            </span>
+                        </div>
+                        <p class="pt-3">
+                            r#"
+                                Vention is an outsourcing company which played a pivotal role in shaping my career trajectory.
+                                Thanks to it, I had the opportunity to mature as a software engineer through work
+                                in multiple projects, each contributing significantly to my professional growth and
+                                enriching my skill set.
+                            "#
+                        </p>
+                    </section>
+
+                    <section class="flex flex-col gap-2">
+                        <h4>"Art Auctions Web-Scrapping Platform"</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <Badge variant=BadgeVariant::Green>"Node"</Badge>
+                            <Badge variant=BadgeVariant::Purple>"TypeScript"</Badge>
+                            <Badge variant=BadgeVariant::Blue>"Puppeteer"</Badge>
+                            <Badge variant=BadgeVariant::Pink>"TypeORM"</Badge>
+                            <Badge variant=BadgeVariant::Yellow>"PostgreSQL"</Badge>
+                            <Badge variant=BadgeVariant::Yellow>"AWS"</Badge>
+                            <Badge variant=BadgeVariant::Red>"Ruby"</Badge>
+                            <Badge variant=BadgeVariant::Blue>"Python"</Badge>
+                        </div>
+                        <p class="pt-3">
+                            r#"
+                                A platform aimed to provide users with fine-grained analytics on the art world,
+                                so that they could decide which artworks or artists could not only become valuable assets
+                                to their collection, but also serve as a wise investment. Apparently, artworks prove to be
+                                an effective investment tool.
+                            "#
+                        </p>
+                    </section>
+
+                    <section class="flex flex-col gap-2">
+                        <h4>"Investment and Financial Literacy Education App"</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <Badge variant=BadgeVariant::Green>"Node"</Badge>
+                            <Badge variant=BadgeVariant::Purple>"TypeScript"</Badge>
+                            <Badge variant=BadgeVariant::Pink>"Express"</Badge>
+                            <Badge variant=BadgeVariant::Pink>"Sequelize"</Badge>
+                            <Badge variant=BadgeVariant::Yellow>"PostgreSQL"</Badge>
+                            <Badge variant=BadgeVariant::Yellow>"AWS"</Badge>
+                            <Badge variant=BadgeVariant::Red>"Redis"</Badge>
+                        </div>
+                        <p class="pt-3">
+                            r#"
+                                The app goal was to educate people about investing by offering informative materials
+                                and a microinvestment platform. Through this initiative, users can not only gain
+                                insights into the workings of money and the economy, but also take important initial
+                                steps in building trust within the investment system.
+                            "#
+                        </p>
+                    </section>
+
+                    <section class="flex flex-col gap-2">
+                        <h4>"Blockchain Based Art Selling Platform"</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <Badge variant=BadgeVariant::Green>"Node"</Badge>
+                            <Badge variant=BadgeVariant::Purple>"TypeScript"</Badge>
+                            <Badge variant=BadgeVariant::Pink>"Express"</Badge>
+                            <Badge variant=BadgeVariant::Pink>"Sequelize"</Badge>
+                            <Badge variant=BadgeVariant::Yellow>"MySQL"</Badge>
+                            <Badge variant=BadgeVariant::Yellow>"AWS"</Badge>
+                            <Badge variant=BadgeVariant::Blue>"React"</Badge>
+                            <Badge variant=BadgeVariant::Blue>"Redux"</Badge>
+                        </div>
+                        <p class="pt-3">
+                            r#"
+                                This project was dedicated to the creation of an art platform that seamlessly
+                                merged the worlds of digital NFC and physical art. It included the trading and purchase
+                                of artworks through the use of cryptocurrencies, enhancing accessibility and offering
+                                a modern way to engage with the art market.
+                            "#
+                        </p>
+                    </section>
+
+                    <section class="flex flex-col gap-2">
+                        <h4>"Fresh Food and Food-Kit Delivery"</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <Badge variant=BadgeVariant::Purple>"TypeScript"</Badge>
+                            <Badge variant=BadgeVariant::Blue>"React"</Badge>
+                            <Badge variant=BadgeVariant::Blue>"Redux"</Badge>
+                        </div>
+                        <p class="pt-3">
+                            r#"
+                                This project revolutionized the culinary experience or at least it was one of the first
+                                of its kind. By providing fresh ingredients instead of pre-prepared meals,
+                                it introduced a fine-grained diet planner that emphasized health and nutrition.
+                                It not only simplified cooking, but also empowered individuals to make healthier
+                                dietary choices.
+                            "#
+                        </p>
+                    </section>
+
+                    <section class="flex flex-col gap-2">
+                        <h4>"IT Educational Platform"</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <Badge variant=BadgeVariant::Green>"Node"</Badge>
+                            <Badge variant=BadgeVariant::Purple>"TypeScript"</Badge>
+                            <Badge variant=BadgeVariant::Pink>"NestJS"</Badge>
+                            <Badge variant=BadgeVariant::Pink>"TypeORM"</Badge>
+                            <Badge variant=BadgeVariant::Yellow>"PostgreSQL"</Badge>
+                            <Badge variant=BadgeVariant::Blue>"React"</Badge>
+                            <Badge variant=BadgeVariant::Blue>"Redux"</Badge>
+                        </div>
+                        <p class="pt-3">
+                            r#"
+                                An internal company's platform designed to organize education of IT specialists.
+                                Mentors were able utilize it to create customized educational plans tailored
+                                to the abilities of their mentees. The platform provided tools for creation of plans,
+                                schedules based on students' availability, and deadline tracking.
+                            "#
+                        </p>
+                    </section>
                 </div>
             </article>
 

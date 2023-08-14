@@ -19,6 +19,10 @@
         @apply text-2xl;
     }
 
+    h4 {
+        @apply text-xl;
+    }
+
     a {
         @apply hover:text-stone-300;
         @apply active:text-stone-400;
