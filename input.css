@@ -33,8 +33,6 @@
     }
 
     p {
-        text-wrap: balance;
-        @apply text-justify;
         @apply text-sm;
         @apply md:text-base;
         @apply text-stone-300;

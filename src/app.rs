@@ -1,5 +1,5 @@
 use crate::browser;
-use crate::components::{Avatar, Badge, BadgeVariant, Button, IcoPrinter, IconVariant};
+use crate::components::{Avatar, BadgeGroup, BadgeVariant, Button, IcoPrinter, IconVariant};
 use leptos::*;
 
 #[component]
@@ -20,7 +20,7 @@ pub fn App(cx: Scope) -> impl IntoView {
 #[component]
 fn IntroSection(cx: Scope) -> impl IntoView {
     view! { cx,
-        <section class="flex flex-col md:flex-row items-center justify-center gap-5 md:gap-10 py-8 md:py-10">
+        <section class="flex flex-col print:flex-row md:flex-row items-center justify-center gap-5 md:gap-10 py-8 md:py-10">
             <div class="w-36 h-36 md:w-48 md:h-48">
                 <Avatar
                     src="assets/profile-photo.webp"
@@ -77,7 +77,7 @@ fn CareerSection(cx: Scope) -> impl IntoView {
 fn CompanyVention(cx: Scope) -> impl IntoView {
     view! { cx,
         <article class="flex gap-5">
-            <div class="w-12 h-12 md:w-32 md:h-32 flex-shrink-0 sticky top-5">
+            <div class="w-12 h-12 md:w-32 md:h-32 print:w-12 print:h-12 flex-shrink-0 sticky print:static top-5">
                 <img src="assets/vention.webp" alt="IT company logotype, abstract lines forming V-shape" />
             </div>
             <div class="flex flex-col gap-8">
@@ -124,15 +124,15 @@ fn VentionInvestmentAndFinancialLiteracyApp(cx: Scope) -> impl IntoView {
                 <h4>"Investment and Financial Literacy Education App"</h4>
                 <p class="italic text-teal-500">"6 months"</p>
             </div>
-            <div class="flex flex-wrap gap-2">
-                <Badge variant=BadgeVariant::Green>"Node"</Badge>
-                <Badge variant=BadgeVariant::Purple>"TypeScript"</Badge>
-                <Badge variant=BadgeVariant::Pink>"Express"</Badge>
-                <Badge variant=BadgeVariant::Pink>"Sequelize"</Badge>
-                <Badge variant=BadgeVariant::Yellow>"PostgreSQL"</Badge>
-                <Badge variant=BadgeVariant::Yellow>"AWS"</Badge>
-                <Badge variant=BadgeVariant::Red>"Redis"</Badge>
-            </div>
+            <BadgeGroup badges=&[
+                (BadgeVariant::Green, "Node"),
+                (BadgeVariant::Purple, "TypeScript"),
+                (BadgeVariant::Pink, "Express"),
+                (BadgeVariant::Pink, "Sequelize"),
+                (BadgeVariant::Yellow, "PostgreSQL"),
+                (BadgeVariant::Yellow, "AWS"),
+                (BadgeVariant::Red, "Redis"),
+            ] />
             <p class="pt-3">
                 "The app goal was to educate people about investing by offering informative materials
                 and a microinvestment platform. Through this initiative, users can not only gain
@@ -167,16 +167,16 @@ fn VentionArtWebscrappingPlatform(cx: Scope) -> impl IntoView {
                 <h4>"Art Auctions Web-Scrapping Platform"</h4>
                 <p class="italic text-teal-500">"1 year 11 months"</p>
             </div>
-            <div class="flex flex-wrap gap-2">
-                <Badge variant=BadgeVariant::Green>"Node"</Badge>
-                <Badge variant=BadgeVariant::Purple>"TypeScript"</Badge>
-                <Badge variant=BadgeVariant::Blue>"Puppeteer"</Badge>
-                <Badge variant=BadgeVariant::Pink>"TypeORM"</Badge>
-                <Badge variant=BadgeVariant::Yellow>"PostgreSQL"</Badge>
-                <Badge variant=BadgeVariant::Yellow>"AWS"</Badge>
-                <Badge variant=BadgeVariant::Red>"Ruby"</Badge>
-                <Badge variant=BadgeVariant::Blue>"Python"</Badge>
-            </div>
+            <BadgeGroup badges=&[
+                (BadgeVariant::Green, "Node"),
+                (BadgeVariant::Purple, "TypeScript"),
+                (BadgeVariant::Blue, "Puppeteer"),
+                (BadgeVariant::Pink, "TypeORM"),
+                (BadgeVariant::Yellow, "PostgreSQL"),
+                (BadgeVariant::Yellow, "AWS"),
+                (BadgeVariant::Red, "Ruby"),
+                (BadgeVariant::Blue, "Python"),
+            ] />
             <p class="pt-3">
                 "A platform aimed to provide users with fine-grained analytics on the art world,
                 so that they could decide which artworks or artists could not only become valuable assets
@@ -208,15 +208,17 @@ fn VentionBlockChainArtSellingPlatform(cx: Scope) -> impl IntoView {
                 <h4>"Blockchain Based Art Selling Platform"</h4>
                 <p class="italic text-teal-500">"2 months"</p>
             </div>
+            <BadgeGroup badges=&[
+                (BadgeVariant::Green, "Node"),
+                (BadgeVariant::Purple, "TypeScript"),
+                (BadgeVariant::Pink, "Express"),
+                (BadgeVariant::Pink, "Sequelize"),
+                (BadgeVariant::Yellow, "MySQL"),
+                (BadgeVariant::Yellow, "AWS"),
+                (BadgeVariant::Blue, "React"),
+                (BadgeVariant::Blue, "Redux"),
+            ] />
             <div class="flex flex-wrap gap-2">
-                <Badge variant=BadgeVariant::Green>"Node"</Badge>
-                <Badge variant=BadgeVariant::Purple>"TypeScript"</Badge>
-                <Badge variant=BadgeVariant::Pink>"Express"</Badge>
-                <Badge variant=BadgeVariant::Pink>"Sequelize"</Badge>
-                <Badge variant=BadgeVariant::Yellow>"MySQL"</Badge>
-                <Badge variant=BadgeVariant::Yellow>"AWS"</Badge>
-                <Badge variant=BadgeVariant::Blue>"React"</Badge>
-                <Badge variant=BadgeVariant::Blue>"Redux"</Badge>
             </div>
             <p class="pt-3">
                 "This project was dedicated to the creation of an art platform that seamlessly
@@ -244,11 +246,11 @@ fn VentionFoodDeliveryPlatform(cx: Scope) -> impl IntoView {
                 <h4>"Fresh Food and Food-Kit Delivery"</h4>
                 <p class="italic text-teal-500">"5 months"</p>
             </div>
-            <div class="flex flex-wrap gap-2">
-                <Badge variant=BadgeVariant::Purple>"TypeScript"</Badge>
-                <Badge variant=BadgeVariant::Blue>"React"</Badge>
-                <Badge variant=BadgeVariant::Blue>"Redux"</Badge>
-            </div>
+            <BadgeGroup badges=&[
+                (BadgeVariant::Purple, "TypeScript"),
+                (BadgeVariant::Blue, "React"),
+                (BadgeVariant::Blue, "Redux"),
+            ] />
             <p class="pt-3">
                 "This project revolutionized the culinary experience, or at least it was one of the
                 first of its kind. By providing fresh ingredients instead of pre-prepared meals,
@@ -280,15 +282,15 @@ fn VentionITEducationPlatform(cx: Scope) -> impl IntoView {
                 <h4>"IT Educational Platform"</h4>
                 <p class="italic text-teal-500">"8 months"</p>
             </div>
-            <div class="flex flex-wrap gap-2">
-                <Badge variant=BadgeVariant::Green>"Node"</Badge>
-                <Badge variant=BadgeVariant::Purple>"TypeScript"</Badge>
-                <Badge variant=BadgeVariant::Pink>"NestJS"</Badge>
-                <Badge variant=BadgeVariant::Pink>"TypeORM"</Badge>
-                <Badge variant=BadgeVariant::Yellow>"PostgreSQL"</Badge>
-                <Badge variant=BadgeVariant::Blue>"React"</Badge>
-                <Badge variant=BadgeVariant::Blue>"Redux"</Badge>
-            </div>
+            <BadgeGroup badges=&[
+                (BadgeVariant::Green, "Node"),
+                (BadgeVariant::Purple, "TypeScript"),
+                (BadgeVariant::Pink, "NestJS"),
+                (BadgeVariant::Pink, "TypeORM"),
+                (BadgeVariant::Yellow, "PostgreSQL"),
+                (BadgeVariant::Blue, "React"),
+                (BadgeVariant::Blue, "Redux"),
+            ] />
             <p class="pt-3">
                 "An internal company’s platform designed to organize education of IT specialists.
                 Mentors were able to utilize it in order to create customized educational plans tailored
@@ -308,7 +310,7 @@ fn VentionITEducationPlatform(cx: Scope) -> impl IntoView {
 fn UniversityBSUIR(cx: Scope) -> impl IntoView {
     view! { cx,
         <article class="flex gap-5">
-            <div class="w-12 h-12 md:w-32 md:h-32 flex-shrink-0 sticky top-5">
+            <div class="w-12 h-12 md:w-32 md:h-32 print:w-12 print:h-12 flex-shrink-0 sticky print:static top-5">
                 <img src="assets/bsuir.webp" alt="university logotype, radio-waves" />
             </div>
             <div class="flex flex-col">

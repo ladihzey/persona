@@ -2,6 +2,7 @@ use leptos::*;
 use BadgeVariant::*;
 
 #[allow(dead_code)]
+#[derive(Copy, Clone)]
 pub enum BadgeVariant {
     Gray,
     Red,
@@ -49,5 +50,22 @@ pub fn Badge(cx: Scope, children: Children, variant: BadgeVariant) -> impl IntoV
                 {children(cx)}
             </span>
         },
+    }
+}
+
+#[component]
+pub fn BadgeGroup(cx: Scope, badges: &'static [(BadgeVariant, &'static str)]) -> impl IntoView {
+    view! { cx,
+        <div class="flex flex-wrap gap-2">
+            <For
+                each=move || badges.iter()
+                key=|(_, label)| label
+                view=move |cx, (variant, label)| {
+                    view! { cx,
+                        <Badge variant={*variant}>{label}</Badge>
+                    }
+                }
+            />
+        </div>
     }
 }
