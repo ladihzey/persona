@@ -5,8 +5,8 @@ use leptos::*;
 #[component]
 pub fn App(cx: Scope) -> impl IntoView {
     view! { cx,
-        <div class="bg-pattern-topography bg-neutral-900 min-h-screen w-screen">
-            <main class="max-w-screen-lg w-full p-10 mx-auto flex flex-col items-center gap-10">
+        <div class="md:bg-pattern-topography bg-neutral-900 min-h-screen min-w-fit w-screen">
+            <main class="max-w-screen-lg w-full p-5 md:p-10 mx-auto flex flex-col items-center gap-5 md:gap-10">
                 <IntroSection />
                 <PersonalitySection />
                 <CareerSection />
@@ -20,8 +20,8 @@ pub fn App(cx: Scope) -> impl IntoView {
 #[component]
 fn IntroSection(cx: Scope) -> impl IntoView {
     view! { cx,
-        <section class="flex items-center justify-center gap-10 py-10">
-            <div class="w-48 h-48">
+        <section class="flex flex-col md:flex-row items-center justify-center gap-5 md:gap-10 py-8 md:py-10">
+            <div class="w-36 h-36 md:w-48 md:h-48">
                 <Avatar
                     src="assets/profile-photo.webp"
                     alt="profile photo"
@@ -40,9 +40,9 @@ fn IntroSection(cx: Scope) -> impl IntoView {
 #[component]
 fn PersonalitySection(cx: Scope) -> impl IntoView {
     view! { cx,
-        <section class="w-full flex flex-col gap-5">
+        <section class="w-full flex flex-col gap-3 md:gap-5">
             <h2>"Who am I?"</h2>
-            <article class="flex flex-col gap-3">
+            <article class="flex flex-col gap-2 md:gap-3">
                 <p>
                     "I’m a software engineer who is deeply fascinated by the boundless possibilities
                     of the web-platform. My journey reflects adaptability, embracing diverse challenges
@@ -65,7 +65,7 @@ fn PersonalitySection(cx: Scope) -> impl IntoView {
 #[component]
 fn CareerSection(cx: Scope) -> impl IntoView {
     view! { cx,
-        <section class="w-full flex flex-col gap-8">
+        <section class="w-full flex flex-col gap-5 md:gap-8">
             <h2>"My Journey"</h2>
             <CompanyVention />
             <UniversityBSUIR />
@@ -77,7 +77,7 @@ fn CareerSection(cx: Scope) -> impl IntoView {
 fn CompanyVention(cx: Scope) -> impl IntoView {
     view! { cx,
         <article class="flex gap-5">
-            <div class="w-32 h-32 flex-shrink-0 sticky top-5">
+            <div class="w-12 h-12 md:w-32 md:h-32 flex-shrink-0 sticky top-5">
                 <img src="assets/vention.webp" alt="IT company logotype, abstract lines forming V-shape" />
             </div>
             <div class="flex flex-col gap-8">
@@ -308,7 +308,7 @@ fn VentionITEducationPlatform(cx: Scope) -> impl IntoView {
 fn UniversityBSUIR(cx: Scope) -> impl IntoView {
     view! { cx,
         <article class="flex gap-5">
-            <div class="w-32 h-32 flex-shrink-0 sticky top-5">
+            <div class="w-12 h-12 md:w-32 md:h-32 flex-shrink-0 sticky top-5">
                 <img src="assets/bsuir.webp" alt="university logotype, radio-waves" />
             </div>
             <div class="flex flex-col">
@@ -333,7 +333,7 @@ fn UniversityBSUIR(cx: Scope) -> impl IntoView {
 #[component]
 fn DownloadProfileSection(cx: Scope) -> impl IntoView {
     view! { cx,
-        <section class="py-10 print:hidden">
+        <section class="py-8 md:py-10 print:hidden">
             <Button on:click=move |_| browser::window::print()>
                 <IcoPrinter variant=IconVariant::Solid/>
                 "Print Profile"
@@ -346,8 +346,8 @@ fn DownloadProfileSection(cx: Scope) -> impl IntoView {
 fn Footer(cx: Scope) -> impl IntoView {
     view! { cx,
         <footer class="w-full mx-auto bg-neutral-900 border-t-2 border-teal-700">
-            <div class="max-w-screen-lg mx-auto px-10 py-8 flex items-center">
-                <ul class="flex gap-10 print:flex-col print:gap-3">
+            <div class="max-w-screen-lg mx-auto p-5 py-8 md:px-10 md:py-8 flex items-center">
+                <ul class="flex flex-row print:flex-col gap-5 md:gap-10 print:gap-3">
                     <li>
                         <a class="flex items-center gap-2 print:hidden" href="https://github.com/ladihzey">
                             <div class="w-5 h-5">
