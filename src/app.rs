@@ -1,5 +1,5 @@
 use crate::browser;
-use crate::components::{Avatar, Button, Badge, BadgeVariant, IcoPrinter, IconVariant};
+use crate::components::{Avatar, Badge, BadgeVariant, Button, IcoPrinter, IconVariant};
 use leptos::*;
 
 #[component]
@@ -10,7 +10,7 @@ pub fn App(cx: Scope) -> impl IntoView {
                 <IntroSection />
                 <PersonalitySection />
                 <CareerSection />
-                <DownloadPortfolioSection />
+                <DownloadProfileSection />
             </main>
             <Footer />
         </div>
@@ -28,7 +28,7 @@ fn IntroSection(cx: Scope) -> impl IntoView {
                 />
             </div>
             <h1>
-                "Hi, I'm "
+                "Hi, I’m "
                 <a
                     class="underline"
                     href="https://translate.google.com/?sl=en&tl=ru&text=Yegor%20Zhidal&op=translate"
@@ -47,24 +47,18 @@ fn PersonalitySection(cx: Scope) -> impl IntoView {
             <h2>"Who am I?"</h2>
             <article class="flex flex-col gap-3">
                 <p>
-                    r#"
-                        I'm a software engineer who is deeply fascinated by the boundless possibilities
-                        of the web-platform. My journey reflects adaptability, embracing diverse challenges
-                        and creating seamless web-experiences.
-                    "#
+                    "I’m a software engineer who is deeply fascinated by the boundless possibilities
+                    of the web-platform. My journey reflects adaptability, embracing diverse challenges
+                    and creating seamless web-experiences."
                 </p>
                 <p>
-                    r#"
-                        As a passionate learner, I continuously broaden my expertise and explore new domains
-                        e.g. this very web-page you are currently reading is built with Rust.
-                        A few years ago, I couldn't even have imagined that it would be possible!
-                    "#
+                    "As a passionate learner, I continuously broaden my expertise and explore new domains
+                    e.g. this very web-page you are currently reading is built with Rust.
+                    A few years ago, I couldn’t even have imagined that it would be possible!"
                 </p>
                 <p>
-                    r#"
-                        I do believe that the most remarkable things arise from the efforts of great teams.
-                        That is why I highly treasure teamwork and I am committed to being a valuable teammate as well.
-                    "#
+                    "I do believe that the most remarkable things arise from the efforts of great teams.
+                    That is why I highly treasure teamwork and I am committed to being a valuable teammate as well."
                 </p>
             </article>
         </section>
@@ -80,28 +74,69 @@ fn CareerSection(cx: Scope) -> impl IntoView {
                 <div class="w-32 h-32 flex-shrink-0 sticky top-5">
                     <img src="assets/vention.webp" alt="IT company logotype, abstract lines forming V-shape" />
                 </div>
-                <div class="flex flex-col gap-6">
-                    <section>
-                        <h3>"Vention"</h3>
-                        <div class="flex items-center gap-2">
-                            <p class="italic text-teal-500">"August 2019 — NOW"</p>
-                            <span class="relative flex h-3 w-3">
-                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
-                                <span class="relative inline-flex rounded-full h-3 w-3 bg-teal-500"></span>
-                            </span>
+                <div class="flex flex-col gap-8">
+                    <section class="flex flex-col gap-3">
+                        <div>
+                            <h3>"Vention"</h3>
+                            <div class="flex items-center gap-2">
+                                <p class="italic text-teal-500">"August 2019 — NOW"</p>
+                                <span class="relative flex h-3 w-3">
+                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-3 w-3 bg-teal-500"></span>
+                                </span>
+                            </div>
                         </div>
-                        <p class="pt-3">
-                            r#"
-                                Vention is an outsourcing company which played a pivotal role in shaping my career trajectory.
-                                Thanks to it, I had the opportunity to mature as a software engineer through work
-                                in multiple projects, each contributing significantly to my professional growth and
-                                enriching my skill set.
-                            "#
+                        <p>
+                            "Vention is an outsourcing company which played a pivotal role in shaping my career trajectory.
+                            Thanks to it, I had the opportunity to mature as a software engineer through work
+                            in multiple projects, each contributing significantly to my professional growth and
+                            enriching my skill set."
                         </p>
                     </section>
 
                     <section class="flex flex-col gap-2">
-                        <h4>"Art Auctions Web-Scrapping Platform"</h4>
+                        <div>
+                            <h4>"Investment and Financial Literacy Education App"</h4>
+                            <p class="italic text-teal-500">"6 months"</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <Badge variant=BadgeVariant::Green>"Node"</Badge>
+                            <Badge variant=BadgeVariant::Purple>"TypeScript"</Badge>
+                            <Badge variant=BadgeVariant::Pink>"Express"</Badge>
+                            <Badge variant=BadgeVariant::Pink>"Sequelize"</Badge>
+                            <Badge variant=BadgeVariant::Yellow>"PostgreSQL"</Badge>
+                            <Badge variant=BadgeVariant::Yellow>"AWS"</Badge>
+                            <Badge variant=BadgeVariant::Red>"Redis"</Badge>
+                        </div>
+                        <p class="pt-3">
+                            "The app goal was to educate people about investing by offering informative materials
+                            and a microinvestment platform. Through this initiative, users can not only gain
+                            insights into the workings of money and the economy, but also take important initial
+                            steps in building trust within the investment system."
+                        </p>
+                        <p>
+                            "Initially, I was introduced to this project to"
+                            <em class="font-bold">" conduct an assessment"</em>
+                            ". While project assessments were new to me, identifying the issues wasn’t hard.
+                            What became really interesting experience to me is my further work there as a"
+                            <em class="font-bold">" back-end engineer "</em>
+                            "aiming to mitigate the identified issues and establish
+                            development processes that would prevent such issues in the future"
+                        </p>
+                        <p>
+                            "I’ve learnt that it’s a complex task to change the team and the project quickly,
+                            even when understanding how the things should be done and what went wrong.
+                            Developing migration and refactoring strategies, while simultaneously keeping
+                            the development ongoing, ain’t easy. It requires time and patience,
+                            moving further step-by-step."
+                        </p>
+                    </section>
+
+                    <section class="flex flex-col gap-2">
+                        <div>
+                            <h4>"Art Auctions Web-Scrapping Platform"</h4>
+                            <p class="italic text-teal-500">"1 year 11 months"</p>
+                        </div>
                         <div class="flex flex-wrap gap-2">
                             <Badge variant=BadgeVariant::Green>"Node"</Badge>
                             <Badge variant=BadgeVariant::Purple>"TypeScript"</Badge>
@@ -113,38 +148,31 @@ fn CareerSection(cx: Scope) -> impl IntoView {
                             <Badge variant=BadgeVariant::Blue>"Python"</Badge>
                         </div>
                         <p class="pt-3">
-                            r#"
-                                A platform aimed to provide users with fine-grained analytics on the art world,
-                                so that they could decide which artworks or artists could not only become valuable assets
-                                to their collection, but also serve as a wise investment. Apparently, artworks prove to be
-                                an effective investment tool.
-                            "#
+                            "A platform aimed to provide users with fine-grained analytics on the art world,
+                            so that they could decide which artworks or artists could not only become valuable assets
+                            to their collection, but also serve as a wise investment. Apparently, artworks prove to be
+                            an effective investment tool."
+                        </p>
+                        <p>
+                            "That projects stands out as one of the important moments in my career. I was working there as a"
+                            <em class="font-bold">" software engineer"</em>
+                            ", and had possibility to step into fascinating realm of"
+                            <em class="font-bold">" distributed systems "</em>
+                            "for the first time. It marked the beginning of my journey in grasping the concepts of
+                            microservices and event-driven design."
+                        </p>
+                        <p>
+                            "Over the span of almost two years, I had the opportunity of not only leading a small team
+                            , but also designing and establishing the architecture of
+                            the web-scrapping pipelines."
                         </p>
                     </section>
 
                     <section class="flex flex-col gap-2">
-                        <h4>"Investment and Financial Literacy Education App"</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <Badge variant=BadgeVariant::Green>"Node"</Badge>
-                            <Badge variant=BadgeVariant::Purple>"TypeScript"</Badge>
-                            <Badge variant=BadgeVariant::Pink>"Express"</Badge>
-                            <Badge variant=BadgeVariant::Pink>"Sequelize"</Badge>
-                            <Badge variant=BadgeVariant::Yellow>"PostgreSQL"</Badge>
-                            <Badge variant=BadgeVariant::Yellow>"AWS"</Badge>
-                            <Badge variant=BadgeVariant::Red>"Redis"</Badge>
+                        <div>
+                            <h4>"Blockchain Based Art Selling Platform"</h4>
+                            <p class="italic text-teal-500">"2 months"</p>
                         </div>
-                        <p class="pt-3">
-                            r#"
-                                The app goal was to educate people about investing by offering informative materials
-                                and a microinvestment platform. Through this initiative, users can not only gain
-                                insights into the workings of money and the economy, but also take important initial
-                                steps in building trust within the investment system.
-                            "#
-                        </p>
-                    </section>
-
-                    <section class="flex flex-col gap-2">
-                        <h4>"Blockchain Based Art Selling Platform"</h4>
                         <div class="flex flex-wrap gap-2">
                             <Badge variant=BadgeVariant::Green>"Node"</Badge>
                             <Badge variant=BadgeVariant::Purple>"TypeScript"</Badge>
@@ -156,35 +184,57 @@ fn CareerSection(cx: Scope) -> impl IntoView {
                             <Badge variant=BadgeVariant::Blue>"Redux"</Badge>
                         </div>
                         <p class="pt-3">
-                            r#"
-                                This project was dedicated to the creation of an art platform that seamlessly
-                                merged the worlds of digital NFC and physical art. It included the trading and purchase
-                                of artworks through the use of cryptocurrencies, enhancing accessibility and offering
-                                a modern way to engage with the art market.
-                            "#
+                            "This project was dedicated to the creation of an art platform that seamlessly
+                            merged the worlds of digital NFC and physical art. It included the trading and purchase
+                            of artworks through the use of cryptocurrencies, enhancing accessibility and offering
+                            a modern way to engage with the art market."
+                        </p>
+                        <p>
+                            "I joined this project as a"
+                            <em class="font-bold">" full-stack engineer "</em>
+                            "for a short term to support the team
+                            with an upcoming release. I had to adapt quickly in order to assist the team in
+                            completing their work. I can’t say that I’ve learned blockchain and cryptocurrencies,
+                            but it was a great lesson for working under pressure and tight deadlines."
                         </p>
                     </section>
 
                     <section class="flex flex-col gap-2">
-                        <h4>"Fresh Food and Food-Kit Delivery"</h4>
+                        <div>
+                            <h4>"Fresh Food and Food-Kit Delivery"</h4>
+                            <p class="italic text-teal-500">"5 months"</p>
+                        </div>
                         <div class="flex flex-wrap gap-2">
                             <Badge variant=BadgeVariant::Purple>"TypeScript"</Badge>
                             <Badge variant=BadgeVariant::Blue>"React"</Badge>
                             <Badge variant=BadgeVariant::Blue>"Redux"</Badge>
                         </div>
                         <p class="pt-3">
-                            r#"
-                                This project revolutionized the culinary experience or at least it was one of the first
-                                of its kind. By providing fresh ingredients instead of pre-prepared meals,
-                                it introduced a fine-grained diet planner that emphasized health and nutrition.
-                                It not only simplified cooking, but also empowered individuals to make healthier
-                                dietary choices.
-                            "#
+                            "This project revolutionized the culinary experience, or at least it was one of the
+                            first of its kind. By providing fresh ingredients instead of pre-prepared meals,
+                            it introduced a fine-grained diet planner that emphasized health and nutrition.
+                            It not only simplified cooking, but also empowered individuals to make healthier
+                            dietary choices."
+                        </p>
+                        <p>
+                            "I worked on this project as a"
+                            <em class="font-bold">" frontend-end engineer"</em>
+                            ". I was responsible for the development of a control panel for managing orders,
+                            logistics, users, and stored ingredients."
+                        </p>
+                        <p>
+                            "While the team was large and I didn’t feel like I was making a big impact,
+                            I had a good opportunity to work with"
+                            <em class="font-bold">" microfrontends architecture"</em>
+                            "."
                         </p>
                     </section>
 
                     <section class="flex flex-col gap-2">
-                        <h4>"IT Educational Platform"</h4>
+                        <div>
+                            <h4>"IT Educational Platform"</h4>
+                            <p class="italic text-teal-500">"8 months"</p>
+                        </div>
                         <div class="flex flex-wrap gap-2">
                             <Badge variant=BadgeVariant::Green>"Node"</Badge>
                             <Badge variant=BadgeVariant::Purple>"TypeScript"</Badge>
@@ -195,12 +245,15 @@ fn CareerSection(cx: Scope) -> impl IntoView {
                             <Badge variant=BadgeVariant::Blue>"Redux"</Badge>
                         </div>
                         <p class="pt-3">
-                            r#"
-                                An internal company's platform designed to organize education of IT specialists.
-                                Mentors were able utilize it to create customized educational plans tailored
-                                to the abilities of their mentees. The platform provided tools for creation of plans,
-                                schedules based on students' availability, and deadline tracking.
-                            "#
+                            "An internal company’s platform designed to organize education of IT specialists.
+                            Mentors were able to utilize it in order to create customized educational plans tailored
+                            to the abilities of their mentees. The platform provided tools for creation of plans,
+                            schedules based on students’ availability, and deadline tracking."
+                        </p>
+                        <p>
+                            "It was a great initial project, where I gradually gained invaluable experience.
+                            Starting from the small tasks, I eventually ended up responsible for the end-to-end
+                            development of entire features."
                         </p>
                     </section>
                 </div>
@@ -219,12 +272,10 @@ fn CareerSection(cx: Scope) -> impl IntoView {
                         "Faculty of Computer Systems and Networks"
                     </p>
                     <p class="pt-3">
-                        r#"
-                            While I didn't complete my diploma work and attain a bachelor's degree,
-                            I did complete all the required courses. This educational journey
-                            has provided me with valuable foundational knowledge that I've applied
-                            and built upon throughout my experiences.
-                        "#
+                        "While I didn’t complete my diploma work and attain a bachelor’s degree,
+                        I did complete all the required courses. This educational journey
+                        has provided me with valuable foundational knowledge that I’ve applied
+                        and built upon throughout my experiences."
                     </p>
                 </div>
             </article>
@@ -233,12 +284,12 @@ fn CareerSection(cx: Scope) -> impl IntoView {
 }
 
 #[component]
-fn DownloadPortfolioSection(cx: Scope) -> impl IntoView {
+fn DownloadProfileSection(cx: Scope) -> impl IntoView {
     view! { cx,
         <section class="py-10 no-print">
             <Button on:click=move |_| browser::window::print()>
                 <IcoPrinter variant=IconVariant::Solid/>
-                "Print Portfolio"
+                "Print Profile"
             </Button>
         </section>
     }
