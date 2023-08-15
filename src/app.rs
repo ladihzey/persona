@@ -6,7 +6,7 @@ use leptos::*;
 pub fn App(cx: Scope) -> impl IntoView {
     view! { cx,
         <div class="md:bg-pattern-topography bg-neutral-900 min-h-screen min-w-fit w-screen">
-            <main class="max-w-screen-lg w-full p-5 md:p-10 mx-auto flex flex-col items-center gap-5 md:gap-10">
+            <main class="max-w-screen-lg w-full p-5 md:p-10 mx-auto flex flex-col items-center gap-8 md:gap-14">
                 <IntroSection />
                 <PersonalitySection />
                 <CareerSection />
@@ -20,7 +20,7 @@ pub fn App(cx: Scope) -> impl IntoView {
 #[component]
 fn IntroSection(cx: Scope) -> impl IntoView {
     view! { cx,
-        <section class="flex flex-col print:flex-row md:flex-row items-center justify-center gap-5 md:gap-10 py-8 md:py-10">
+        <section class="flex flex-col print:flex-row md:flex-row items-center justify-center gap-5 md:gap-14 py-8 md:py-14">
             <div class="w-36 h-36 md:w-48 md:h-48">
                 <Avatar
                     src="assets/profile-photo.webp"
@@ -40,9 +40,9 @@ fn IntroSection(cx: Scope) -> impl IntoView {
 #[component]
 fn PersonalitySection(cx: Scope) -> impl IntoView {
     view! { cx,
-        <section class="w-full flex flex-col gap-3 md:gap-5">
-            <h2>"Who am I?"</h2>
-            <article class="flex flex-col gap-2 md:gap-3">
+        <section class="w-full">
+            <h2 class="pb-3 md:pb-5">"Who am I?"</h2>
+            <article class="flex flex-col gap-2">
                 <p>
                     "I’m a software engineer who is deeply fascinated by the boundless possibilities
                     of the web-platform. My journey reflects adaptability, embracing diverse challenges
@@ -50,8 +50,7 @@ fn PersonalitySection(cx: Scope) -> impl IntoView {
                 </p>
                 <p>
                     "As a passionate learner, I continuously broaden my expertise and explore new domains
-                    e.g. this very web-page you are currently reading is built with Rust.
-                    A few years ago, I couldn’t even have imagined that it would be possible!"
+                    e.g. this very web-page you are currently reading is built with Rust."
                 </p>
                 <p>
                     "I do believe that the most remarkable things arise from the efforts of great teams.
@@ -65,10 +64,12 @@ fn PersonalitySection(cx: Scope) -> impl IntoView {
 #[component]
 fn CareerSection(cx: Scope) -> impl IntoView {
     view! { cx,
-        <section class="w-full flex flex-col gap-5 md:gap-8">
-            <h2>"My Journey"</h2>
-            <CompanyVention />
-            <UniversityBSUIR />
+        <section class="w-full">
+            <h2 class="pb-3 md:pb-5">"My Journey"</h2>
+            <div class="flex flex-col gap-8 md:gap-12">
+                <CompanyVention />
+                <UniversityBSUIR />
+            </div>
         </section>
     }
 }
@@ -80,10 +81,10 @@ fn CompanyVention(cx: Scope) -> impl IntoView {
             <div class="w-12 h-12 md:w-32 md:h-32 print:w-12 print:h-12 flex-shrink-0 sticky print:static top-5">
                 <img src="assets/vention.webp" alt="IT company logotype, abstract lines forming V-shape" />
             </div>
-            <div class="flex flex-col gap-8">
+            <div class="flex flex-col gap-8 md:gap-10">
                 <VentionDescription />
+                <VentionArtWebScrappingPlatform />
                 <VentionInvestmentAndFinancialLiteracyApp />
-                <VentionArtWebscrappingPlatform />
                 <VentionBlockChainArtSellingPlatform />
                 <VentionFoodDeliveryPlatform />
                 <VentionITEducationPlatform />
@@ -95,11 +96,11 @@ fn CompanyVention(cx: Scope) -> impl IntoView {
 #[component]
 fn VentionDescription(cx: Scope) -> impl IntoView {
     view! { cx,
-        <section class="flex flex-col gap-3">
-            <div>
+        <section>
+            <div class="pb-3">
                 <h3>"Vention"</h3>
                 <div class="flex items-center gap-2">
-                    <p class="italic text-teal-500">"August 2019 — NOW"</p>
+                    <p class="italic text-teal-500">"August 2019 — Present"</p>
                     <span class="relative flex h-3 w-3">
                         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
                         <span class="relative inline-flex rounded-full h-3 w-3 bg-teal-500"></span>
@@ -133,34 +134,32 @@ fn VentionInvestmentAndFinancialLiteracyApp(cx: Scope) -> impl IntoView {
                 (BadgeVariant::Yellow, "AWS"),
                 (BadgeVariant::Red, "Redis"),
             ] />
-            <p class="pt-3">
+            <p class="py-3">
                 "The app goal was to educate people about investing by offering informative materials
                 and a microinvestment platform. Through this initiative, users can not only gain
-                insights into the workings of money and the economy, but also take important initial
-                steps in building trust within the investment system."
+                insights into the budget management, but also build trust with the investment system."
             </p>
             <p>
                 "Initially, I was introduced to this project to"
-                <em class="font-bold">" conduct an assessment"</em>
+                <em class="font-semibold">" conduct an assessment"</em>
                 ". While project assessments were new to me, identifying the issues wasn’t hard.
-                What became really interesting experience to me is my further work there as a"
-                <em class="font-bold">" back-end engineer "</em>
+                What became really interesting experience is my further work there as a"
+                <em class="font-semibold">" software engineer "</em>
                 "aiming to mitigate the identified issues and establish
-                development processes that would prevent such issues in the future"
+                development processes that would stabilize the project."
             </p>
             <p>
-                "I’ve learnt that it’s a complex task to change the team and the project quickly,
-                even when understanding how the things should be done and what went wrong.
-                Developing migration and refactoring strategies, while simultaneously keeping
-                the development ongoing, ain’t easy. It requires time and patience,
-                moving further step-by-step."
+                "I’ve learnt that it’s a complex task to do a processes migration and perform refactoring
+                strategies, while simultaneously keeping the development process ongoing. It ain’t easy to change
+                the team and the project quickly, even when understanding how the things should be done
+                and what exactly went wrong. It requires time and patience, moving further step-by-step."
             </p>
         </section>
     }
 }
 
 #[component]
-fn VentionArtWebscrappingPlatform(cx: Scope) -> impl IntoView {
+fn VentionArtWebScrappingPlatform(cx: Scope) -> impl IntoView {
     view! { cx,
         <section class="flex flex-col gap-2">
             <div>
@@ -177,14 +176,13 @@ fn VentionArtWebscrappingPlatform(cx: Scope) -> impl IntoView {
                 (BadgeVariant::Red, "Ruby"),
                 (BadgeVariant::Blue, "Python"),
             ] />
-            <p class="pt-3">
-                "A platform aimed to provide users with fine-grained analytics on the art world,
-                so that they could decide which artworks or artists could not only become valuable assets
-                to their collection, but also serve as a wise investment. Apparently, artworks prove to be
-                an effective investment tool."
+            <p class="py-3">
+                "A platform which provided users with extensive analytics on the art world,
+                so that they could decide which artworks could not only become valuable assets to their collection,
+                but also serve as a wise investment of theirs money."
             </p>
             <p>
-                "That projects stands out as one of the important moments in my career. I was working there as a"
+                "This projects stands out as one of the important moments in my career. I was working there as a"
                 <em class="font-bold">" software engineer"</em>
                 ", and had possibility to step into fascinating realm of"
                 <em class="font-bold">" distributed systems "</em>
@@ -192,9 +190,10 @@ fn VentionArtWebscrappingPlatform(cx: Scope) -> impl IntoView {
                 microservices and event-driven design."
             </p>
             <p>
-                "Over the span of almost two years, I had the opportunity of not only leading a small team
-                , but also designing and establishing the architecture of
-                the web-scrapping pipelines."
+                "Over the span of almost two years, I had the opportunity of not only"
+                <em class="font-bold">" designing and establishing the architecture "</em>
+                "of the web-scrapping pipelines, but also taking a role of a"
+                <em class="font-bold">" team-leader"</em>"."
             </p>
         </section>
     }
@@ -220,19 +219,19 @@ fn VentionBlockChainArtSellingPlatform(cx: Scope) -> impl IntoView {
             ] />
             <div class="flex flex-wrap gap-2">
             </div>
-            <p class="pt-3">
+            <p class="py-3">
                 "This project was dedicated to the creation of an art platform that seamlessly
                 merged the worlds of digital NFC and physical art. It included the trading and purchase
-                of artworks through the use of cryptocurrencies, enhancing accessibility and offering
-                a modern way to engage with the art market."
+                of artworks through the use of cryptocurrencies, offering a modern way to engage with
+                the art market."
             </p>
             <p>
                 "I joined this project as a"
                 <em class="font-bold">" full-stack engineer "</em>
-                "for a short term to support the team
-                with an upcoming release. I had to adapt quickly in order to assist the team in
-                completing their work. I can’t say that I’ve learned blockchain and cryptocurrencies,
-                but it was a great lesson for working under pressure and tight deadlines."
+                "for a short term to support the team with an upcoming release. I had to adapt quickly
+                in order to assist the team in completing their work. I can’t say that I’ve learned
+                blockchain and cryptocurrencies, but it was a great lesson for working under pressure
+                and tight deadlines."
             </p>
         </section>
     }
@@ -251,24 +250,18 @@ fn VentionFoodDeliveryPlatform(cx: Scope) -> impl IntoView {
                 (BadgeVariant::Blue, "React"),
                 (BadgeVariant::Blue, "Redux"),
             ] />
-            <p class="pt-3">
-                "This project revolutionized the culinary experience, or at least it was one of the
-                first of its kind. By providing fresh ingredients instead of pre-prepared meals,
-                it introduced a fine-grained diet planner that emphasized health and nutrition.
-                It not only simplified cooking, but also empowered individuals to make healthier
+            <p class="py-3">
+                "This project brought a new culinary experience by providing fresh ingredients instead
+                of pre-prepared meals. It introduced a fine-grained diet planner that emphasized health
+                and nutrition. It not only simplified cooking, but also empowered individuals to make healthier
                 dietary choices."
             </p>
             <p>
                 "I worked on this project as a"
                 <em class="font-bold">" frontend-end engineer"</em>
                 ". I was responsible for the development of a control panel for managing orders,
-                logistics, users, and stored ingredients."
-            </p>
-            <p>
-                "While the team was large and I didn’t feel like I was making a big impact,
-                I had a good opportunity to work with"
-                <em class="font-bold">" microfrontends architecture"</em>
-                "."
+                logistics, users, and stored ingredients. This project introduced me to the concept of"
+                <em class="font-bold">" microfrontends architecture"</em>"."
             </p>
         </section>
     }
@@ -291,7 +284,7 @@ fn VentionITEducationPlatform(cx: Scope) -> impl IntoView {
                 (BadgeVariant::Blue, "React"),
                 (BadgeVariant::Blue, "Redux"),
             ] />
-            <p class="pt-3">
+            <p class="py-3">
                 "An internal company’s platform designed to organize education of IT specialists.
                 Mentors were able to utilize it in order to create customized educational plans tailored
                 to the abilities of their mentees. The platform provided tools for creation of plans,
