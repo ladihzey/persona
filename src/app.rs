@@ -192,8 +192,8 @@ fn VentionArtWebScrappingPlatform(cx: Scope) -> impl IntoView {
             <p>
                 "Over the span of almost two years, I had the opportunity of not only"
                 <em class="font-bold">" designing and establishing the architecture "</em>
-                "of the web-scrapping pipelines, but also taking a role of a"
-                <em class="font-bold">" team-leader"</em>"."
+                "of the web-scrapping pipelines, but also"
+                <em class="font-bold">" leading a small team "</em>" of two people."
             </p>
         </section>
     }
@@ -342,7 +342,7 @@ fn Footer(cx: Scope) -> impl IntoView {
     view! { cx,
         <footer class="w-full mx-auto bg-neutral-900 border-t-2 border-teal-700">
             <div class="max-w-screen-lg mx-auto p-5 py-8 md:px-10 md:py-8 flex items-center">
-                <ul class="flex flex-row print:flex-col gap-5 md:gap-10 print:gap-3">
+                <ul class="w-full flex flex-col md:flex-row print:flex-col justify-between gap-5 md:gap-10 print:gap-3">
                     <li>
                         <a class="flex items-center gap-2 print:hidden" href="https://github.com/ladihzey">
                             <div class="w-5 h-5">
@@ -350,25 +350,22 @@ fn Footer(cx: Scope) -> impl IntoView {
                             </div>
                             "GitHub"
                         </a>
-                        <p class="hidden print:inline-block">"GitHub: https://github.com/ladihzey"</p>
+                        <p class="hidden print:inline-block">"https://github.com/ladihzey"</p>
                     </li>
-                    <li>
+                    <li class="flex-grow">
                         <a class="flex items-center gap-2 print:hidden" href="https://www.linkedin.com/in/yegor-zhidal-10530a1a7">
                             <div class="w-5 h-5">
                                 <img src="assets/linkedin.png" alt="blue linkedin logo" />
                             </div>
                             "LinkedIn"
                         </a>
-                        <p class="hidden print:inline-block">"LinkedIn: https://www.linkedin.com/in/yegor-zhidal-10530a1a7"</p>
+                        <p class="hidden print:inline-block">"https://www.linkedin.com/in/yegor-zhidal-10530a1a7"</p>
                     </li>
                     <li>
                         <a class="flex items-center gap-2 print:hidden" href="mailto: ladihzey@proton.me">
-                            <div class="w-5 h-5">
-                                <img src="assets/protonmail.png" alt="protonmail logo" />
-                            </div>
-                            "Email"
+                            "ladihzey@proton.me"
                         </a>
-                        <p class="hidden print:inline-block">"Email: ladihzey@proton.me"</p>
+                        <p class="hidden print:inline-block">"ladihzey@proton.me"</p>
                     </li>
                 </ul>
             </div>
