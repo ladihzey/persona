@@ -21,7 +21,7 @@ pub fn App(cx: Scope) -> impl IntoView {
 #[component]
 fn IntroSection(cx: Scope) -> impl IntoView {
     view! { cx,
-        <section class="flex flex-col print:flex-row md:flex-row items-center justify-center gap-5 md:gap-14 py-8 md:py-14">
+        <section class="flex flex-col print:flex-row md:flex-row items-center justify-center gap-5 md:gap-14 py-8 md:py-14 print:p-0">
             <div class="w-36 h-36 md:w-48 md:h-48">
                 <Avatar
                     src="assets/profile-photo.webp"
@@ -390,13 +390,20 @@ fn Footer(cx: Scope) -> impl IntoView {
                         <p class="hidden print:inline-block">"https://github.com/ladihzey"</p>
                     </li>
                     <li class="flex-grow">
-                        <a class="flex items-center gap-2 print:hidden" href="https://www.linkedin.com/in/yegor-zhidal-10530a1a7">
+                        <a class="w-fit flex items-center gap-2 print:hidden" href="https://www.linkedin.com/in/yegor-zhidal-10530a1a7">
                             <div class="w-5 h-5">
                                 <img src="assets/linkedin.png" alt="blue linkedin logo" />
                             </div>
                             "LinkedIn"
                         </a>
                         <p class="hidden print:inline-block">"https://www.linkedin.com/in/yegor-zhidal-10530a1a7"</p>
+                    </li>
+                    <li>
+                        <a class="flex items-center gap-2 print:hidden" href="tel: +48452143483">
+                            <span>"🇵🇱"</span>
+                            "452-143-483"
+                        </a>
+                        <p class="hidden print:inline-block">"452-143-483"</p>
                     </li>
                     <li>
                         <a class="flex items-center gap-2 print:hidden" href="mailto: ladihzey@proton.me">
