@@ -87,7 +87,7 @@ fn CompanyVention(cx: Scope) -> impl IntoView {
                 <VentionInvestmentAndFinancialLiteracyApp />
                 <VentionBlockChainArtSellingPlatform />
                 <VentionFoodDeliveryPlatform />
-                <VentionITEducationPlatform />
+                <VentionEDUPlatform />
             </div>
         </article>
     }
@@ -96,8 +96,8 @@ fn CompanyVention(cx: Scope) -> impl IntoView {
 #[component]
 fn VentionDescription(cx: Scope) -> impl IntoView {
     view! { cx,
-        <section>
-            <div class="pb-3">
+        <section class="flex flex-col gap-2">
+            <div>
                 <h3>"Vention"</h3>
                 <div class="flex items-center gap-2">
                     <p class="italic text-teal-500">"August 2019 — Present"</p>
@@ -107,11 +107,30 @@ fn VentionDescription(cx: Scope) -> impl IntoView {
                     </span>
                 </div>
             </div>
-            <p>
+            <p class="py-3">
                 "Vention is an outsourcing company which played a pivotal role in shaping my career trajectory.
                 Thanks to it, I had the opportunity to mature as a software engineer through work
                 in multiple projects, each contributing significantly to my professional growth and
                 enriching my skill set."
+            </p>
+            <p>
+                "Within the company, there is an internal organization called EDU — a community
+                of people, who wanted to willingly share their knowledge
+                and experiences with each other"
+            </p>
+            <p>
+                "I had the responsibility of"
+                <em class="font-bold">" organizing the frontend community"</em>
+                ", membership of which reached"
+                <em class="font-bold">" 108 individuals "</em>
+                "at my time. This role included coordinating various events such as meetups and news digests
+                within the frontend community. These experiences granted me invaluable insights into
+                human motivation, leadership, and the management of large groups.
+                "
+            </p>
+            <p>
+                "Additionally, I was an active member of the EDU community myself, which opened
+                doors to mentorship, participation in interviews, and contributions to the shared knowledge base."
             </p>
         </section>
     }
@@ -261,18 +280,18 @@ fn VentionFoodDeliveryPlatform(cx: Scope) -> impl IntoView {
                 <em class="font-bold">" frontend-end engineer"</em>
                 ". I was responsible for the development of a control panel for managing orders,
                 logistics, users, and stored ingredients. This project introduced me to the concept of"
-                <em class="font-bold">" microfrontends architecture"</em>"."
+                <em class="font-bold">" microfrontends"</em>"."
             </p>
         </section>
     }
 }
 
 #[component]
-fn VentionITEducationPlatform(cx: Scope) -> impl IntoView {
+fn VentionEDUPlatform(cx: Scope) -> impl IntoView {
     view! { cx,
         <section class="flex flex-col gap-2">
             <div>
-                <h4>"IT Educational Platform"</h4>
+                <h4>"EDU Platform"</h4>
                 <p class="italic text-teal-500">"8 months"</p>
             </div>
             <BadgeGroup badges=&[
