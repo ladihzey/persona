@@ -78,9 +78,11 @@ fn CareerSection(cx: Scope) -> impl IntoView {
 fn CompanyVention(cx: Scope) -> impl IntoView {
     view! { cx,
         <article class="flex gap-5">
-            <div class="w-12 h-12 md:w-32 md:h-32 print:w-12 print:h-12 flex-shrink-0 sticky print:static top-5">
+            <a class="w-12 h-12 md:w-32 md:h-32 print:w-12 print:h-12 flex-shrink-0 sticky print:static top-5 filter hover:brightness-90"
+                href="https://ventionteams.com/"
+            >
                 <img src="assets/vention.webp" alt="IT company logotype, abstract lines forming V-shape" />
-            </div>
+            </a>
             <div class="flex flex-col gap-8 md:gap-10">
                 <VentionDescription />
                 <VentionArtWebScrappingPlatform />
@@ -98,7 +100,9 @@ fn VentionDescription(cx: Scope) -> impl IntoView {
     view! { cx,
         <section class="flex flex-col gap-2">
             <div>
-                <h3>"Vention"</h3>
+                <h3>
+                    <a href="https://ventionteams.com/">"Vention"</a>
+                </h3>
                 <div class="flex items-center gap-2">
                     <p class="italic text-teal-500">"August 2019 — Present"</p>
                     <span class="relative flex h-3 w-3">
@@ -115,7 +119,7 @@ fn VentionDescription(cx: Scope) -> impl IntoView {
             </p>
             <p>
                 "Within the company, there is an internal organization called EDU — a community
-                of people, who wanted to willingly share their knowledge
+                of people, who willingly share their knowledge
                 and experiences with each other"
             </p>
             <p>
@@ -325,15 +329,17 @@ fn UniversityBSUIR(cx: Scope) -> impl IntoView {
             <div class="w-12 h-12 md:w-32 md:h-32 print:w-12 print:h-12 flex-shrink-0 sticky print:static top-5">
                 <img src="assets/bsuir.webp" alt="university logotype, radio-waves" />
             </div>
-            <div class="flex flex-col">
-                <h3>"BSUIR"</h3>
-                <p class="italic text-teal-500">"2017 — 2022"</p>
-                <p class="pt-3">
+            <div class="flex flex-col gap-2">
+                <div>
+                    <h3>"BSUIR"</h3>
+                    <p class="italic text-teal-500">"2017 — 2022"</p>
+                </div>
+                <p class="py-3">
                     "Belarusian State University of Informatics and Radioelectronics"
                     <br />
                     "Faculty of Computer Systems and Networks"
                 </p>
-                <p class="pt-3">
+                <p>
                     "While I didn’t complete my diploma work and attain a bachelor’s degree,
                     I did complete all the required courses. This educational journey
                     has provided me with valuable foundational knowledge that I’ve applied
