@@ -10,6 +10,7 @@ pub fn App(cx: Scope) -> impl IntoView {
                 <IntroSection />
                 <PersonalitySection />
                 <CareerSection />
+                <EducationSection />
                 <DownloadProfileSection />
             </main>
             <Footer />
@@ -68,7 +69,6 @@ fn CareerSection(cx: Scope) -> impl IntoView {
             <h2 class="pb-3 md:pb-5">"My Journey"</h2>
             <div class="flex flex-col gap-8 md:gap-12">
                 <CompanyVention />
-                <UniversityBSUIR />
             </div>
         </section>
     }
@@ -323,6 +323,18 @@ fn VentionEDUPlatform(cx: Scope) -> impl IntoView {
 }
 
 #[component]
+fn EducationSection(cx: Scope) -> impl IntoView {
+    view! { cx,
+        <section class="w-full">
+            <h2 class="pb-3 md:pb-5">"Education"</h2>
+            <div class="flex flex-col gap-8 md:gap-12">
+                <UniversityBSUIR />
+            </div>
+        </section>
+    }
+}
+
+#[component]
 fn UniversityBSUIR(cx: Scope) -> impl IntoView {
     view! { cx,
         <article class="flex gap-5">
@@ -334,7 +346,7 @@ fn UniversityBSUIR(cx: Scope) -> impl IntoView {
                     <h3>"BSUIR"</h3>
                     <p class="italic text-teal-500">"2017 — 2022"</p>
                 </div>
-                <p class="py-3">
+                <p>
                     "Belarusian State University of Informatics and Radioelectronics"
                     <br />
                     "Faculty of Computer Systems and Networks"
