@@ -6,9 +6,10 @@ use leptos::*;
 pub fn App(cx: Scope) -> impl IntoView {
     view! { cx,
         <div class="md:bg-pattern-topography bg-neutral-900 min-h-screen min-w-fit w-screen">
-            <main class="max-w-screen-lg w-full p-5 md:p-10 mx-auto flex flex-col items-center gap-8 md:gap-14">
+            <main class="max-w-screen-lg w-full p-5 md:p-10 print:p-0 mx-auto flex flex-col items-center gap-8 md:gap-14 print:gap-5">
                 <IntroSection />
                 <PersonalitySection />
+                <SkillsSection />
                 <CareerSection />
                 <EducationSection />
                 <DownloadProfileSection />
@@ -59,6 +60,31 @@ fn PersonalitySection(cx: Scope) -> impl IntoView {
                 </p>
             </article>
         </section>
+    }
+}
+
+#[component]
+fn SkillsSection(cx: Scope) -> impl IntoView {
+    view! { cx,
+       <section class="w-full">
+            <h2 class="pb-3 md:pb-5">"Tech Stack"</h2>
+            <BadgeGroup badges=&[
+                (BadgeVariant::Green, "Node"),
+                (BadgeVariant::Purple, "TypeScript"),
+                (BadgeVariant::Yellow, "AWS"),
+                (BadgeVariant::Yellow, "PostgreSQL"),
+                (BadgeVariant::Yellow, "MySQL"),
+                (BadgeVariant::Red, "Redis"),
+                (BadgeVariant::Blue, "Docker"),
+                (BadgeVariant::Pink, "NestJS"),
+                (BadgeVariant::Pink, "Express"),
+                (BadgeVariant::Pink, "TypeORM"),
+                (BadgeVariant::Pink, "Sequelize"),
+                (BadgeVariant::Blue, "React"),
+                (BadgeVariant::Blue, "Redux"),
+            ]
+            />
+       </section>
     }
 }
 
