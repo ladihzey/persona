@@ -1,5 +1,5 @@
 use crate::browser;
-use crate::components::{Avatar, BadgeGroup, BadgeVariant, Button, IcoPrinter, IconVariant};
+use crate::components::{Avatar, BadgeGroup, BadgeVariant, IcoPrinter, IconVariant};
 use leptos::*;
 
 #[component]
@@ -82,8 +82,7 @@ fn SkillsSection(cx: Scope) -> impl IntoView {
                 (BadgeVariant::Pink, "Sequelize"),
                 (BadgeVariant::Blue, "React"),
                 (BadgeVariant::Blue, "Redux"),
-            ]
-            />
+            ] />
        </section>
     }
 }
@@ -392,10 +391,10 @@ fn UniversityBSUIR(cx: Scope) -> impl IntoView {
 fn DownloadProfileSection(cx: Scope) -> impl IntoView {
     view! { cx,
         <section class="py-8 md:py-10 print:hidden">
-            <Button on:click=move |_| browser::window::print()>
+            <button class="btn-primary" on:click=move |_| browser::window::print()>
                 <IcoPrinter variant=IconVariant::Solid/>
                 "Print Profile"
-            </Button>
+            </button>
         </section>
     }
 }
