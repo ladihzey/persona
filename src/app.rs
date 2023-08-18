@@ -1,4 +1,3 @@
-use crate::browser;
 use crate::components::{Avatar, BadgeGroup, BadgeVariant, IcoPrinter, IconVariant};
 use leptos::*;
 
@@ -391,7 +390,7 @@ fn UniversityBSUIR(cx: Scope) -> impl IntoView {
 fn DownloadProfileSection(cx: Scope) -> impl IntoView {
     view! { cx,
         <section class="py-8 md:py-10 print:hidden">
-            <button class="btn-primary" on:click=move |_| browser::window::print()>
+            <button class="btn-primary" on:click=move |_| { web_sys::window().map(|w| w.print()); }>
                 <IcoPrinter variant=IconVariant::Solid/>
                 "Print Profile"
             </button>

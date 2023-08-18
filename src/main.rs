@@ -1,7 +1,6 @@
 use leptos::*;
 
 mod app;
-mod browser;
 mod components;
 
 use app::App;
