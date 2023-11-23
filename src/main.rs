@@ -6,5 +6,5 @@ mod components;
 use app::App;
 
 fn main() {
-    mount_to_body(|cx| view! { cx, <App/> })
+    mount_to_body(|| view! { <App/> })
 }

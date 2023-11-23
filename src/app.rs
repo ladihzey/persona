@@ -1,9 +1,9 @@
-use crate::components::{Avatar, BadgeGroup, BadgeVariant, IcoPrinter, IconVariant};
+use crate::components::{Avatar, BadgeGroup, BadgeVariant, IconPrinter, IconVariant};
 use leptos::*;
 
 #[component]
-pub fn App(cx: Scope) -> impl IntoView {
-    view! { cx,
+pub fn App() -> impl IntoView {
+    view! {
         <div class="md:bg-pattern-topography bg-neutral-900 min-h-screen min-w-fit w-screen">
             <main class="max-w-screen-lg w-full p-5 md:p-10 print:p-0 mx-auto flex flex-col items-center gap-8 md:gap-14 print:gap-5">
                 <IntroSection />
@@ -19,8 +19,8 @@ pub fn App(cx: Scope) -> impl IntoView {
 }
 
 #[component]
-fn IntroSection(cx: Scope) -> impl IntoView {
-    view! { cx,
+fn IntroSection() -> impl IntoView {
+    view! {
         <section class="flex flex-col print:flex-row md:flex-row items-center justify-center gap-5 md:gap-14 py-8 md:py-14 print:p-0">
             <div class="w-36 h-36 md:w-48 md:h-48">
                 <Avatar
@@ -39,8 +39,8 @@ fn IntroSection(cx: Scope) -> impl IntoView {
 }
 
 #[component]
-fn PersonalitySection(cx: Scope) -> impl IntoView {
-    view! { cx,
+fn PersonalitySection() -> impl IntoView {
+    view! {
         <section class="w-full">
             <h2 class="pb-3 md:pb-5">"Who am I?"</h2>
             <article class="flex flex-col gap-2">
@@ -63,8 +63,8 @@ fn PersonalitySection(cx: Scope) -> impl IntoView {
 }
 
 #[component]
-fn SkillsSection(cx: Scope) -> impl IntoView {
-    view! { cx,
+fn SkillsSection() -> impl IntoView {
+    view! {
        <section class="w-full">
             <h2 class="pb-3 md:pb-5">"Tech Stack"</h2>
             <BadgeGroup badges=&[
@@ -87,8 +87,8 @@ fn SkillsSection(cx: Scope) -> impl IntoView {
 }
 
 #[component]
-fn CareerSection(cx: Scope) -> impl IntoView {
-    view! { cx,
+fn CareerSection() -> impl IntoView {
+    view! {
         <section class="w-full">
             <h2 class="pb-3 md:pb-5">"My Journey"</h2>
             <div class="flex flex-col gap-8 md:gap-12">
@@ -99,8 +99,8 @@ fn CareerSection(cx: Scope) -> impl IntoView {
 }
 
 #[component]
-fn CompanyVention(cx: Scope) -> impl IntoView {
-    view! { cx,
+fn CompanyVention() -> impl IntoView {
+    view! {
         <article class="flex gap-5">
             <a class="w-12 h-12 md:w-32 md:h-32 print:w-12 print:h-12 flex-shrink-0 sticky print:static top-5 filter hover:brightness-90"
                 href="https://ventionteams.com/"
@@ -120,8 +120,8 @@ fn CompanyVention(cx: Scope) -> impl IntoView {
 }
 
 #[component]
-fn VentionDescription(cx: Scope) -> impl IntoView {
-    view! { cx,
+fn VentionDescription() -> impl IntoView {
+    view! {
         <section class="flex flex-col gap-2">
             <div>
                 <h3>
@@ -165,8 +165,8 @@ fn VentionDescription(cx: Scope) -> impl IntoView {
 }
 
 #[component]
-fn VentionInvestmentAndFinancialLiteracyApp(cx: Scope) -> impl IntoView {
-    view! { cx,
+fn VentionInvestmentAndFinancialLiteracyApp() -> impl IntoView {
+    view! {
         <section class="flex flex-col gap-2">
             <div>
                 <h4>"Investment and Financial Literacy Education App"</h4>
@@ -206,8 +206,8 @@ fn VentionInvestmentAndFinancialLiteracyApp(cx: Scope) -> impl IntoView {
 }
 
 #[component]
-fn VentionArtWebScrappingPlatform(cx: Scope) -> impl IntoView {
-    view! { cx,
+fn VentionArtWebScrappingPlatform() -> impl IntoView {
+    view! {
         <section class="flex flex-col gap-2">
             <div>
                 <h4>"Art Auctions Web-Scrapping Platform"</h4>
@@ -247,8 +247,8 @@ fn VentionArtWebScrappingPlatform(cx: Scope) -> impl IntoView {
 }
 
 #[component]
-fn VentionBlockChainArtSellingPlatform(cx: Scope) -> impl IntoView {
-    view! { cx,
+fn VentionBlockChainArtSellingPlatform() -> impl IntoView {
+    view! {
         <section class="flex flex-col gap-2">
             <div>
                 <h4>"Blockchain Based Art Selling Platform"</h4>
@@ -285,8 +285,8 @@ fn VentionBlockChainArtSellingPlatform(cx: Scope) -> impl IntoView {
 }
 
 #[component]
-fn VentionFoodDeliveryPlatform(cx: Scope) -> impl IntoView {
-    view! { cx,
+fn VentionFoodDeliveryPlatform() -> impl IntoView {
+    view! {
         <section class="flex flex-col gap-2">
             <div>
                 <h4>"Fresh Food and Food-Kit Delivery"</h4>
@@ -315,8 +315,8 @@ fn VentionFoodDeliveryPlatform(cx: Scope) -> impl IntoView {
 }
 
 #[component]
-fn VentionEDUPlatform(cx: Scope) -> impl IntoView {
-    view! { cx,
+fn VentionEDUPlatform() -> impl IntoView {
+    view! {
         <section class="flex flex-col gap-2">
             <div>
                 <h4>"EDU Platform"</h4>
@@ -347,8 +347,8 @@ fn VentionEDUPlatform(cx: Scope) -> impl IntoView {
 }
 
 #[component]
-fn EducationSection(cx: Scope) -> impl IntoView {
-    view! { cx,
+fn EducationSection() -> impl IntoView {
+    view! {
         <section class="w-full">
             <h2 class="pb-3 md:pb-5">"Education"</h2>
             <div class="flex flex-col gap-8 md:gap-12">
@@ -359,8 +359,8 @@ fn EducationSection(cx: Scope) -> impl IntoView {
 }
 
 #[component]
-fn UniversityBSUIR(cx: Scope) -> impl IntoView {
-    view! { cx,
+fn UniversityBSUIR() -> impl IntoView {
+    view! {
         <article class="flex gap-5">
             <div class="w-12 h-12 md:w-32 md:h-32 print:w-12 print:h-12 flex-shrink-0 sticky print:static top-5">
                 <img src="assets/bsuir.webp" alt="university logotype, radio-waves" />
@@ -387,11 +387,11 @@ fn UniversityBSUIR(cx: Scope) -> impl IntoView {
 }
 
 #[component]
-fn DownloadProfileSection(cx: Scope) -> impl IntoView {
-    view! { cx,
+fn DownloadProfileSection() -> impl IntoView {
+    view! {
         <section class="py-8 md:py-10 print:hidden">
             <button class="btn-primary" on:click=move |_| { web_sys::window().map(|w| w.print()); }>
-                <IcoPrinter variant=IconVariant::Solid/>
+                <IconPrinter variant=IconVariant::Solid/>
                 "Print Profile"
             </button>
         </section>
@@ -399,8 +399,8 @@ fn DownloadProfileSection(cx: Scope) -> impl IntoView {
 }
 
 #[component]
-fn Footer(cx: Scope) -> impl IntoView {
-    view! { cx,
+fn Footer() -> impl IntoView {
+    view! {
         <footer class="w-full mx-auto bg-neutral-900 border-t-2 border-teal-700">
             <div class="max-w-screen-lg mx-auto p-5 py-8 md:px-10 md:py-8 flex items-center">
                 <ul class="w-full flex flex-col md:flex-row print:flex-col justify-between gap-5 md:gap-10 print:gap-3">
