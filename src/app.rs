@@ -92,7 +92,48 @@ fn CareerSection() -> impl IntoView {
         <section class="w-full">
             <h2 class="pb-3 md:pb-5">"My Journey"</h2>
             <div class="flex flex-col gap-8 md:gap-12">
+                <CompanyMonday />
                 <CompanyVention />
+            </div>
+        </section>
+    }
+}
+
+#[component]
+fn CompanyMonday() -> impl IntoView {
+    view! {
+        <article class="flex gap-5">
+            <a class="w-12 h-12 md:w-32 md:h-32 print:w-12 print:h-12 flex-shrink-0 sticky print:static top-5 filter hover:brightness-90"
+                href="https://monday.com/"
+            >
+                <img src="assets/monday.webp" alt="IT company logotype, three round shapes forming M-letter" />
+            </a>
+            <div class="flex flex-col gap-8 md:gap-10">
+                <MondayDescription />
+            </div>
+        </article>
+    }
+}
+
+#[component]
+fn MondayDescription() -> impl IntoView {
+    view! {
+        <section class="flex flex-col gap-2">
+            <div>
+                <h3>
+                    <a href="https://monday.com/">"Monday.com"</a>
+                </h3>
+                <div class="flex items-center gap-2">
+                    <p class="italic text-teal-500">"December 2023 — Present"</p>
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-teal-500"></span>
+                    </span>
+                </div>
+                <p class="py-3">
+                    "Monday.com is a product company that provides customers with no-code platform (Work OS),
+                    which they could use to shape all the necessary workflows that their business requires."
+                </p>
             </div>
         </section>
     }
@@ -127,13 +168,7 @@ fn VentionDescription() -> impl IntoView {
                 <h3>
                     <a href="https://ventionteams.com/">"Vention"</a>
                 </h3>
-                <div class="flex items-center gap-2">
-                    <p class="italic text-teal-500">"August 2019 — Present"</p>
-                    <span class="relative flex h-3 w-3">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-3 w-3 bg-teal-500"></span>
-                    </span>
-                </div>
+                <p class="italic text-teal-500">"August 2019 — November 2023"</p>
             </div>
             <p class="py-3">
                 "Vention is an outsourcing company which played a pivotal role in shaping my career trajectory.
