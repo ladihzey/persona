@@ -4,7 +4,7 @@ use leptos::*;
 #[component]
 pub fn App() -> impl IntoView {
     view! {
-        <div class="md:bg-pattern-topography bg-neutral-900 min-h-screen min-w-fit w-screen">
+        <div class="md:bg-pattern-topography bg-neutral-900 min-h-screen min-w-fit w-full">
             <main class="max-w-screen-lg w-full p-5 md:p-10 print:p-0 mx-auto flex flex-col items-center gap-8 md:gap-14 print:gap-5">
                 <IntroSection />
                 <PersonalitySection />
